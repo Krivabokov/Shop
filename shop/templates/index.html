@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Все товары</h1>
+        {% if products|length > 0 %}
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            {% for el in products %}
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal"><ya-tr-span data-index="7-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Free" data-translation="Бесплатно" data-ch="0" data-type="trSpan">{{ el.name }}</ya-tr-span></h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><ya-tr-span data-index="8-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="$0" data-translation="0 долларов" data-ch="0" data-type="trSpan">{{ el.price }} рублей</ya-tr-span></h1>
+                    <a href="/{{ el.id }}" class="btn btn-warning">Подробнее</a>
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>На сайте еще нет статей</p>
+        {% endif %}
+    </div>
+{% endblock %}
+

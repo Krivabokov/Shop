@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Обновление данных о товаре
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h1>Обновление данных о товаре</h1>
+  <form method="post">
+    <input type="text" name="name" id="name" class="form-control" value="{{ product.name }}" placeholder="Название товара"><br>
+    <textarea name="description" id="description" class="form-control" placeholder="Описание товара">{{ product.description }}</textarea><br>
+    <textarea name="price" id="price" class="form-control" placeholder="Цена в рублях">{{ product.price }}</textarea><br>
+    <input type="submit" class="btn btn-success" value="Обновить"><br>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h1>{{ product.name }}</h1>
+
+  <div class="alert alert-info">
+    <p>{{ product.description }}</p>
+    <a href="/{{ product.id }}/delete" class="btn btn-danger">Удалить</a>
+    <a href="/{{ product.id }}/update" class="btn btn-success">Редактировать</a>
+  </div>
+</div>
+{% endblock %}
